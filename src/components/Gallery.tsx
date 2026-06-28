@@ -1,0 +1,48 @@
+import { galleryImages } from "@/data/content";
+import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
+
+export default function Gallery() {
+  return (
+    <section className="py-24 bg-card">
+      <div className="container mx-auto px-4 md:px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16 max-w-3xl mx-auto"
+        >
+          <h2 className="text-primary font-medium tracking-wider uppercase text-sm mb-3">Lookbook</h2>
+          <h3 className="text-4xl font-serif font-bold text-foreground mb-4">The Sharp Vision Style</h3>
+          <p className="text-muted-foreground">Find inspiration in our curated collection of luxury eyewear styles.</p>
+        </motion.div>
+
+        <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
+          {galleryImages.map((src, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: (index % 3) * 0.1 }}
+              className="relative group rounded-2xl overflow-hidden break-inside-avoid"
+            >
+              <img 
+                src={src} 
+                alt={`Eyewear gallery image ${index + 1}`} 
+                className="w-full h-auto object-cover"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-navy-950/40 dark:bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
+                <Button variant="outline" className="bg-white/10 text-white border-white/40 hover:bg-white hover:text-black">
+                  View Style
+                </Button>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
