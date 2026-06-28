@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { collections } from "@/data/content";
-import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+
 
 export default function Collections() {
   return (

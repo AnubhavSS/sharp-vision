@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import { ArrowRight, Calendar } from "lucide-react";
+
 
 export default function Hero() {
   return (

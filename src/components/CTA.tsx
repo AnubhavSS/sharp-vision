@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import { MapPin, Phone } from "lucide-react";
+
 
 export default function CTA() {
   return (

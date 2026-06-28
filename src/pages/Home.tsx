@@ -1,4 +1,4 @@
-import Navbar from "@/components/Navbar";
+
 import Hero from "@/components/Hero";
 import TrustSection from "@/components/TrustSection";
 import Collections from "@/components/Collections";
@@ -11,7 +11,7 @@ import ContactSection from "@/components/ContactSection";
 import FAQ from "@/components/FAQ";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
-import FloatingButtons from "@/components/FloatingButtons";
+
 import Header from "@/components/Header";
 
 export default function Home() {
@@ -33,7 +33,7 @@ export default function Home() {
         <CTA />
       </main>
       <Footer />
-      <FloatingButtons />
+      {/* <FloatingButtons /> */}
     </div>
   );
 }
