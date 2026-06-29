@@ -2,9 +2,15 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { MessageCircle, ArrowUp } from "lucide-react";
 
+/**
+ * FloatingButtons component that displays fixed buttons at the bottom right corner.
+ * Features a scroll-to-top button (appears after scrolling) and a WhatsApp contact button.
+ */
 export default function FloatingButtons() {
+  // State to control scroll-to-top button visibility
   const [showScrollTop, setShowScrollTop] = useState(false);
 
+  // Effect to handle scroll event and toggle button visibility
   useEffect(() => {
     const handleScroll = () => {
       setShowScrollTop(window.scrollY > 500);
@@ -14,13 +20,14 @@ export default function FloatingButtons() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Function to scroll to top of page smoothly
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
     <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-4">
-      {/* Scroll to top button */}
+      {/* Scroll to top button (animated) */}
       <AnimatePresence>
         {showScrollTop && (
           <motion.button
@@ -38,7 +45,7 @@ export default function FloatingButtons() {
         )}
       </AnimatePresence>
 
-      {/* WhatsApp button */}
+      {/* WhatsApp contact button */}
       <motion.a
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}

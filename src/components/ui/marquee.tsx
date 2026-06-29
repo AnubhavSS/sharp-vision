@@ -2,6 +2,9 @@ import { type ComponentPropsWithoutRef } from "react"
 
 import { cn } from "@/lib/utils"
 
+/**
+ * Props for the Marquee component
+ */
 interface MarqueeProps extends ComponentPropsWithoutRef<"div"> {
   /**
    * Optional CSS class name to apply custom styles
@@ -33,6 +36,10 @@ interface MarqueeProps extends ComponentPropsWithoutRef<"div"> {
   repeat?: number
 }
 
+/**
+ * Marquee component that creates an infinitely scrolling animation
+ * Supports horizontal and vertical directions, pause on hover, and reversed animation
+ */
 export function Marquee({
   className,
   reverse = false,
@@ -54,6 +61,7 @@ export function Marquee({
         className
       )}
     >
+      {/* Repeat the content multiple times to create the infinite scroll effect */}
       {Array(repeat)
         .fill(0)
         .map((_, i) => (

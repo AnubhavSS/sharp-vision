@@ -4,12 +4,18 @@ import { MapPin, Phone, Mail, Clock, Instagram, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 
+/**
+ * ContactSection component that displays store locations, contact info, and business hours.
+ * Features an interactive map and branch selector.
+ */
 export default function ContactSection() {
+  // State to track which branch is currently selected
   const [branch, setBranch] = useState(0);
 
   return (
     <section id="contact" className="py-24 bg-muted/30 border-y border-border">
       <div className="container mx-auto px-4 md:px-6">
+        {/* Section header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -26,7 +32,7 @@ export default function ContactSection() {
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
-          {/* Map Placeholder */}
+          {/* Map container */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -34,8 +40,8 @@ export default function ContactSection() {
             transition={{ duration: 0.8 }}
             className="rounded-3xl overflow-hidden shadow-sm border border-border h-100 lg:h-auto min-h-100 bg-card relative"
           >
-            {/* Fake Map UI for placeholder */}
-            <div className="absolute inset-0 bg-blue-50/50 dark:bg-slate-900/50 flex flex-col items-center justify-center ">
+            {/* Map iframe */}
+            <div className="absolute inset-0 bg-blue-50/50 dark:bg-slate-900/50 flex flex-col items-center justify-center">
               <iframe
                 src={mapUrl[branch]}
                 width="100%"
@@ -47,6 +53,7 @@ export default function ContactSection() {
             </div>
           </motion.div>
 
+          {/* Contact info container */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -55,12 +62,13 @@ export default function ContactSection() {
             className="flex flex-col justify-center"
           >
             <div className="space-y-8">
+              {/* Branch selector */}
               <div>
                 <h4 className="flex items-center text-lg font-bold text-foreground mb-4">
                   <MapPin className="w-5 h-5 mr-3 text-primary" /> Our Branches
                 </h4>
                 <div className="space-y-4 pl-8 border-l-2 border-muted ml-2.25">
-                  {branches.map((branch, index) => (
+                  {branches.map((branchItem, index) => (
                     <div
                       key={index}
                       className="relative cursor-pointer"
@@ -68,16 +76,17 @@ export default function ContactSection() {
                     >
                       <div className="absolute -left-7.5 top-1.5 w-3 h-3 bg-primary rounded-full ring-4 ring-background"></div>
                       <h5 className="font-semibold text-foreground">
-                        {branch.name}
+                        {branchItem.name}
                       </h5>
                       <p className="text-sm text-muted-foreground mt-1">
-                        {branch.address}
+                        {branchItem.address}
                       </p>
                     </div>
                   ))}
                 </div>
               </div>
 
+              {/* Business hours and contact info */}
               <div className="grid sm:grid-cols-2 gap-6">
                 <div>
                   <h4 className="flex items-center text-lg font-bold text-foreground mb-3">
@@ -108,7 +117,7 @@ export default function ContactSection() {
                         href="mailto:sharpvision.sv.25@gmail.com"
                         className="hover:text-primary transition-colors flex items-center"
                       >
-                        <Mail className="w-3 h-3 mr-2" />{" "}
+                        <Mail className="w-3 h-3 mr-2" />
                         sharpvision.sv.25@gmail.com
                       </a>
                     </li>
@@ -116,12 +125,13 @@ export default function ContactSection() {
                 </div>
               </div>
 
+              {/* Action buttons */}
               <div className="pt-6 border-t border-border flex flex-wrap gap-3">
                 <Button className="bg-primary hover:bg-primary/90">
                   <Phone className="w-4 h-4 mr-2" /> Call Now
                 </Button>
 
-                {/* WhatsApp */}
+                {/* WhatsApp button */}
                 <Button
                   asChild
                   variant="outline"
@@ -137,7 +147,7 @@ export default function ContactSection() {
                   </a>
                 </Button>
 
-                {/* Instagram */}
+                {/* Instagram button */}
                 <Button
                   asChild
                   variant="outline"

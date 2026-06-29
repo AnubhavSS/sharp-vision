@@ -17,12 +17,12 @@ export const collections = [
     description: "Reduced strain for your digital life.",
     image: "/collections/computer.webp"
   },
-  {
-    id: "blue-cut",
-    title: "Blue Cut Lenses",
-    description: "Advanced protection from screen emissions.",
-    image: "/collections/blue-cut.webp"
-  },
+  // {
+  //   id: "blue-cut",
+  //   title: "Blue Cut Lenses",
+  //   description: "Advanced protection from screen emissions.",
+  //   image: "/collections/blue-cut.webp"
+  // },
   {
     id: "kids",
     title: "Kids Collection",

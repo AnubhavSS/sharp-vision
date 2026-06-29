@@ -7,10 +7,15 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
+/**
+ * FAQ component that displays frequently asked questions in an accordion format.
+ * Features smooth animations and interactive expand/collapse functionality.
+ */
 export default function FAQ() {
   return (
     <section className="py-24 bg-background">
       <div className="container mx-auto px-4 md:px-6 max-w-3xl">
+        {/* Section header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -22,6 +27,7 @@ export default function FAQ() {
           <h3 className="text-4xl font-serif font-bold text-foreground">Frequently Asked Questions</h3>
         </motion.div>
 
+        {/* FAQ accordion */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -30,8 +36,8 @@ export default function FAQ() {
         >
           <Accordion type="single" collapsible className="w-full space-y-4">
             {faqs.map((faq, index) => (
-              <AccordionItem 
-                key={index} 
+              <AccordionItem
+                key={index}
                 value={`item-${index}`}
                 className="border border-border rounded-xl px-6 bg-card data-[state=open]:border-primary/50 data-[state=open]:shadow-sm transition-all"
               >

@@ -6,7 +6,7 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --color-background: hsl(var(--background));
+  --color-background: #F7F8F8;
   --color-foreground: hsl(var(--foreground));
   --color-border: hsl(var(--border));
   --color-input: hsl(var(--input));
@@ -20,13 +20,13 @@
   --color-popover-foreground: hsl(var(--popover-foreground));
   --color-popover-border: hsl(var(--popover-border));
 
-  --color-primary: hsl(var(--primary));
-  --color-primary-foreground: hsl(var(--primary-foreground));
-  --color-primary-border: var(--primary-border);
+  --color-primary: #ABC544;
+  --color-primary-foreground: #fff;
+  --color-primary-border: #fff;
 
-  --color-secondary: hsl(var(--secondary));
-  --color-secondary-foreground: hsl(var(--secondary-foreground));
-  --color-secondary-border: var(--secondary-border);
+  --color-secondary: #29A0AA;
+  --color-secondary-foreground: #fff;
+  --color-secondary-border: #fff;
 
   --color-muted: hsl(var(--muted));
   --color-muted-foreground: hsl(var(--muted-foreground));
@@ -143,7 +143,7 @@
   --popover-foreground: 222 47% 11%;
   --popover-border: 214 32% 91%;
 
-  --primary: 25 95% 53%;
+  --primary: #ABC544;
   --primary-foreground: 0 0% 100%;
 
   --secondary: 222 47% 11%;
@@ -194,69 +194,7 @@
   --destructive-border: hsl(from hsl(var(--destructive)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
 }
 
-.dark {
-  --button-outline: rgba(255,255,255, .10);
-  --badge-outline: rgba(255,255,255, .05);
 
-  --opaque-button-border-intensity: 9;
-
-  --elevate-1: rgba(255,255,255, .04);
-  --elevate-2: rgba(255,255,255, .09);
-
-  --background: 222 47% 11%;
-  --foreground: 210 40% 98%;
-  --border: 217 33% 17%;
-
-  --card: 222 47% 8%;
-  --card-foreground: 210 40% 98%;
-  --card-border: 217 33% 17%;
-
-  --sidebar: 222 47% 11%;
-  --sidebar-foreground: 210 40% 98%;
-  --sidebar-border: 217 33% 17%;
-  --sidebar-primary: 210 40% 98%;
-  --sidebar-primary-foreground: 222 47% 11%;
-  --sidebar-accent: 217 33% 17%;
-  --sidebar-accent-foreground: 210 40% 98%;
-  --sidebar-ring: 25 95% 53%;
-
-  --popover: 222 47% 8%;
-  --popover-foreground: 210 40% 98%;
-  --popover-border: 217 33% 17%;
-
-  --primary: 25 95% 53%;
-  --primary-foreground: 0 0% 100%;
-
-  --secondary: 217 33% 17%;
-  --secondary-foreground: 210 40% 98%;
-
-  --muted: 217 33% 17%;
-  --muted-foreground: 215 20% 65%;
-
-  --accent: 217 33% 17%;
-  --accent-foreground: 210 40% 98%;
-
-  --destructive: 0 62% 30%;
-  --destructive-foreground: 210 40% 98%;
-
-  --input: 217 33% 17%;
-  --ring: 25 95% 53%;
-
-  --chart-1: 220 70% 50%;
-  --chart-2: 160 60% 45%;
-  --chart-3: 30 80% 55%;
-  --chart-4: 280 65% 60%;
-  --chart-5: 340 75% 55%;
-
-  --shadow-2xs: 0px 2px 0px 0px hsl(222 47% 8% / 0.5);
-  --shadow-xs: 0px 2px 0px 0px hsl(222 47% 8% / 0.5);
-  --shadow-sm: 0px 2px 0px 0px hsl(222 47% 8% / 0.5), 0px 1px 2px -1px hsl(222 47% 8% / 0.5);
-  --shadow: 0px 2px 0px 0px hsl(222 47% 8% / 0.5), 0px 1px 2px -1px hsl(222 47% 8% / 0.5);
-  --shadow-md: 0px 2px 0px 0px hsl(222 47% 8% / 0.5), 0px 2px 4px -1px hsl(222 47% 8% / 0.5);
-  --shadow-lg: 0px 2px 0px 0px hsl(222 47% 8% / 0.5), 0px 4px 6px -1px hsl(222 47% 8% / 0.5);
-  --shadow-xl: 0px 2px 0px 0px hsl(222 47% 8% / 0.5), 0px 8px 10px -1px hsl(222 47% 8% / 0.5);
-  --shadow-2xl: 0px 2px 0px 0px hsl(222 47% 8% / 0.5);
-}
 
 @layer base {
   * {

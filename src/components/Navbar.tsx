@@ -5,11 +5,19 @@ import { Phone, MessageCircle, Menu, X, Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
 
+/**
+ * Navbar component that provides site navigation, theme toggle, and contact actions.
+ * Features a responsive design with mobile menu and scroll effects.
+ */
 export default function Navbar() {
+  // State to track if user has scrolled
   const [isScrolled, setIsScrolled] = useState(false);
+  // State to control mobile menu visibility
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  // Theme hook for dark/light mode
   const { theme, setTheme } = useTheme();
 
+  // Effect to handle scroll events
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
@@ -18,6 +26,7 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Navigation links data
   const navLinks = [
     { name: "Home", href: "#home" },
     { name: "Collections", href: "#collections" },
@@ -26,6 +35,11 @@ export default function Navbar() {
     { name: "Contact", href: "#contact" },
   ];
 
+  /**
+   * Smooth scroll to a section and close mobile menu
+   * @param e - Mouse event
+   * @param href - Section ID to scroll to
+   */
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     setIsMobileMenuOpen(false);
@@ -41,19 +55,20 @@ export default function Navbar() {
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled 
-          ? "bg-background/80 backdrop-blur-md border-b border-border shadow-sm py-3" 
+        isScrolled
+          ? "bg-background/80 backdrop-blur-md border-b border-border shadow-sm py-3"
           : "bg-transparent py-5"
       }`}
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
+        {/* Brand logo */}
         <Link href="/">
           <div className="font-serif text-2xl font-bold tracking-tight text-foreground cursor-pointer flex items-center">
             Sharp <span className="text-primary ml-1.5">Vision</span>
           </div>
         </Link>
 
-        {/* Desktop Nav */}
+        {/* Desktop navigation */}
         <div className="hidden lg:flex items-center space-x-8">
           {navLinks.map((link) => (
             <a
@@ -67,8 +82,9 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* Actions */}
+        {/* Desktop action buttons */}
         <div className="hidden lg:flex items-center space-x-4">
+          {/* Theme toggle */}
           <Button
             variant="ghost"
             size="icon"
@@ -80,19 +96,22 @@ export default function Navbar() {
             <span className="sr-only">Toggle theme</span>
           </Button>
 
+          {/* WhatsApp button */}
           <Button variant="outline" className="hidden xl:flex gap-2" asChild>
             <a href="https://wa.me/919999999999" target="_blank" rel="noreferrer">
               <MessageCircle className="w-4 h-4 text-green-500" /> WhatsApp
             </a>
           </Button>
 
+          {/* Call button */}
           <Button className="gap-2 bg-primary hover:bg-primary/90 text-primary-foreground">
             <Phone className="w-4 h-4" /> Call Now
           </Button>
         </div>
 
-        {/* Mobile menu toggle */}
+        {/* Mobile menu controls */}
         <div className="flex lg:hidden items-center gap-4">
+          {/* Mobile theme toggle */}
           <Button
             variant="ghost"
             size="icon"
@@ -103,9 +122,10 @@ export default function Navbar() {
             <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
             <span className="sr-only">Toggle theme</span>
           </Button>
-          <Button 
-            variant="ghost" 
-            size="icon" 
+          {/* Mobile menu toggle button */}
+          <Button
+            variant="ghost"
+            size="icon"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -113,7 +133,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile menu dropdown */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
@@ -134,11 +154,13 @@ export default function Navbar() {
                 </a>
               ))}
               <div className="flex flex-col gap-3 pt-4">
+                {/* Mobile WhatsApp button */}
                 <Button variant="outline" className="w-full justify-center gap-2" asChild>
                   <a href="https://wa.me/919999999999" target="_blank" rel="noreferrer">
                     <MessageCircle className="w-5 h-5 text-green-500" /> WhatsApp
                   </a>
                 </Button>
+                {/* Mobile call button */}
                 <Button className="w-full justify-center gap-2">
                   <Phone className="w-5 h-5" /> Call Now
                 </Button>

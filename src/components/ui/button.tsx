@@ -4,6 +4,10 @@ import { Slot } from "radix-ui"
 
 import { cn } from "@/lib/utils"
 
+/**
+ * Button variants configuration using class-variance-authority
+ * Defines different styles and sizes for the button component
+ */
 const buttonVariants = cva(
   "inline-flex shrink-0 items-center justify-center gap-2 rounded-md text-sm font-medium whitespace-nowrap transition-all outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
   {
@@ -38,6 +42,10 @@ const buttonVariants = cva(
   }
 )
 
+/**
+ * Button component with multiple variants and sizes
+ * Supports asChild prop to render as a different element
+ */
 function Button({
   className,
   variant = "default",

@@ -4,12 +4,20 @@ import { Accordion as AccordionPrimitive } from "radix-ui"
 
 import { cn } from "@/lib/utils"
 
+/**
+ * Accordion root component that wraps all accordion items
+ * Built on top of Radix UI's Accordion primitive
+ */
 function Accordion({
   ...props
 }: React.ComponentProps<typeof AccordionPrimitive.Root>) {
   return <AccordionPrimitive.Root data-slot="accordion" {...props} />
 }
 
+/**
+ * AccordionItem component that wraps each individual accordion item
+ * Includes a bottom border (except for the last item)
+ */
 function AccordionItem({
   className,
   ...props
@@ -23,6 +31,10 @@ function AccordionItem({
   )
 }
 
+/**
+ * AccordionTrigger component that toggles the accordion item open/closed
+ * Includes a chevron icon that rotates when open
+ */
 function AccordionTrigger({
   className,
   children,
@@ -45,6 +57,10 @@ function AccordionTrigger({
   )
 }
 
+/**
+ * AccordionContent component that displays the content of an accordion item
+ * Includes smooth open/close animations
+ */
 function AccordionContent({
   className,
   children,
