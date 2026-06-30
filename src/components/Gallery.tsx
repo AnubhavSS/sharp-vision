@@ -1,5 +1,5 @@
 import { galleryImages } from "@/data/content";
-import { Button } from "@/components/ui/button";
+
 import { motion } from "framer-motion";
 
 /**
@@ -41,12 +41,7 @@ export default function Gallery() {
                 className="w-full h-auto object-cover"
                 loading="lazy"
               />
-              {/* Hover overlay */}
-              <div className="absolute inset-0 bg-navy-950/40 dark:bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
-                <Button variant="outline" className="bg-white/10 text-white border-white/40 hover:bg-white hover:text-black">
-                  View Style
-                </Button>
-              </div>
+             
             </motion.div>
           ))}
         </div>

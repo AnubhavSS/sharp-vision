@@ -54,15 +54,10 @@ export const brands = [
 ];
 
 export const galleryImages = [
-  "https://images.unsplash.com/photo-1574258495973-f010dfbb5371?w=400&q=80",
-  "https://images.unsplash.com/photo-1556306535-0f09a537f0a3?w=400&q=80",
-  "https://images.unsplash.com/photo-1508296695146-257a814070b4?w=400&q=80",
-  "https://images.unsplash.com/photo-1607522370275-f6fd21e60a04?w=400&q=80",
-  "https://images.unsplash.com/photo-1559582350-13a65b21f8b5?w=400&q=80",
-  "https://images.unsplash.com/photo-1575487520098-0e5bb56cdb33?w=400&q=80",
-  "https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=400&q=80",
-  "https://images.unsplash.com/photo-1591076482161-42ce6da69f67?w=400&q=80",
-  "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=400&q=80"
+  "/gallery/Sunglass-1.webp",
+  "/gallery/Sunglass-2.webp",
+  "/gallery/Sunglass-3.webp",
+  "/gallery/Sunglass-4.webp",
 ];
 
 export const reviews = [

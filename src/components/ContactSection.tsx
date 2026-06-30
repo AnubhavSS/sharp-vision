@@ -94,8 +94,8 @@ export default function ContactSection() {
                     Hours
                   </h4>
                   <ul className="space-y-1 text-sm text-muted-foreground">
-                    <li>Mon - Sat: 10:00 AM - 8:00 PM</li>
-                    <li>Sunday: 11:00 AM - 6:00 PM</li>
+                    <li>Mon - Sun: 10:00 AM - 10:00 PM</li>
+                   
                   </ul>
                 </div>
 
